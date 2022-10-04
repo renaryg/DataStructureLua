@@ -7,7 +7,7 @@ function Queue.new(o)
   return o
 end
 
-function Queue:push(elem)
+function Queue:enqueue(elem)
   if self:isEmpty() then
     self.head = Node.new({next=nil, value=elem})
   else
@@ -19,7 +19,7 @@ function Queue:push(elem)
   end
 end
 
-function Queue:pop()
+function Queue:dequeue()
   local saveValue = nil
   if not self:isEmpty() then
     saveValue = self.head.value
